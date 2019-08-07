@@ -1,12 +1,29 @@
 <div id="map"></div>
 
 <script>
-    var map;
+    var map, marker, coordinates, locations, i;
+
+    coordinates = []
+    locations = <%=raw @locations %>
+
+    locations.forEach(element => {
+        var obj = {lat: element[0], lng: element[1]};
+        coordinates.push(obj);
+    });
+
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            center: {lat: 51.5074, lng: 0.1277},
+            zoom: 10
         });
+
+        for (let i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: coordinates[i],
+                map: map,
+                title: "This is a test"
+            });
+        }
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_KEY"]%>&callback=initMap"

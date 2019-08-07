@@ -14,6 +14,12 @@ class CourtsController < ApplicationController
       @courts << court
     end
     @courts
+
+    @locations = []
+    @courts.each do |court|
+      @locations << [court[:lat], court[:long]]
+    end
+    @locations
   end
 
   def show
