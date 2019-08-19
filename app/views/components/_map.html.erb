@@ -1,10 +1,10 @@
-<div id="map"></div>
+<div id="map" style=""></div>
 
 <script>
     var map, marker, coordinates, locations, i;
 
     coordinates = []
-    locations = <%=raw @locations %>
+    locations = <%= raw @locations %>
 
     locations.forEach(element => {
         var obj = {lat: element[0], lng: element[1]};

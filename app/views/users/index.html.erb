@@ -1,0 +1,9 @@
+<h1>There are <%= @users.count %> players around you!</h1>
+<h3>Search bar put location render users in the area 2mi radius</h3>
+
+
+<% @users.each do |user| %>
+<%= user.email %>
+<%= user.location %>
+<br>
+<% end %>
