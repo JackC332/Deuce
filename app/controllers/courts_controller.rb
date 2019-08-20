@@ -4,6 +4,8 @@ class CourtsController < ApplicationController
     location = "#{current_user.latitude}, #{current_user.longitude}"
     @results = google_api(location)
 
+    @location_arr = [current_user.latitude, current_user.longitude]
+
     @courts = []
     @results.first(5).each do |result|
       court = {
