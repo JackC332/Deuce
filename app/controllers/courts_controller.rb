@@ -1,7 +1,8 @@
 class CourtsController < ApplicationController
   include CourtsHelper
   def index
-    @results = google_api()
+    location = "#{current_user.latitude}, #{current_user.longitude}"
+    @results = google_api(location)
 
     @courts = []
     @results.first(5).each do |result|

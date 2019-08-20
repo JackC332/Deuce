@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    def index 
-        location = current_user.location
-        @users = User.where........
+    def index
+        @users = User.all
     end
 end
