@@ -1,14 +1,15 @@
-<h1>Here you can see all the tennis courts around you</h1>
-
-<form class="example" action="#">
-    <input type="text" placeholder="Address" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<br>
-<% @courts.each do |court| %>
-    <%= court[:name] %>
-    <br>
-<% end %>
-
-<%= render "components/map" %>
-    
+<div class="container">
+    <div class="results">
+        <% @courts.each do |court| %>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6RzUhL8IDwhm-D2qHa__Nre3N2w4fLQD2xxsnm2n0IVvHeGE" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= court[:name] %></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>     
+        <% end %>
+    </div>
+    <%= render "components/map" %>
+</div>

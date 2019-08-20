@@ -7,7 +7,7 @@ class CourtsController < ApplicationController
     @location_arr = [current_user.latitude, current_user.longitude]
 
     @courts = []
-    @results.first(5).each do |result|
+    @results.first(6).each do |result|
       court = {
         name: result["name"],
         lat: result["geometry"]["location"]["lat"],
