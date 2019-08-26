@@ -1,3 +1,5 @@
-<h1>This is the landing page</h1>
-
-<%= link_to "Go", courts_path %>
+<div class="banner" style="background-image: url(<%= video_path("tennis") %>)">
+    <div class="center">
+        <%= link_to "Play!", courts_path, class: "btn btn-success"  %>
+    </div>
+</div>
