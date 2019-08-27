@@ -7,8 +7,14 @@
 
 .center {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 800px;
   margin: 0 auto;
   height: 100%;
+  }
+
+.center a {
+    font-size: xx-large;
+    border-radius: 10px;
   }
