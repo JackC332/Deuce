@@ -1,4 +1,4 @@
-<div id="map" style=""></div>
+<div id="map"></div>
 
 <script>
     var map, marker, coordinates, locations, i, user_location;
@@ -22,8 +22,7 @@
         for (let i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
                 position: coordinates[i],
-                map: map,
-                title: "This is a test"
+                map: map
             });
         }
     }

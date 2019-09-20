@@ -1,14 +1,16 @@
-<h1>Here you can see all the tennis courts around you</h1>
-
-<form class="example" action="#">
-    <input type="text" placeholder="Address" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<br>
-<% @courts.each do |court| %>
-    <%= court[:name] %>
-    <br>
-<% end %>
-
-<%= render "components/map" %>
-    
+<div class="container">
+    <div class="results">
+        <% @courts.each do |court| %>
+        <div class="card">
+            <%= image_tag "tennis" %>
+            <div class="card-body">
+                <h5 class="card-title"><%= court[:name] %></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <% court = Court.find_by(name: court[:name]) #temp %> 
+                <%= link_to "Select", court_path(court), class: "btn btn-primary" %>
+            </div>
+        </div>     
+        <% end %>
+    </div>
+    <%= render "components/map" %>
+</div>

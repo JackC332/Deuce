@@ -7,7 +7,7 @@ class CourtsController < ApplicationController
     @location_arr = [current_user.latitude, current_user.longitude]
 
     @courts = []
-    @results.first(5).each do |result|
+    @results.first(6).each do |result|
       court = {
         name: result["name"],
         lat: result["geometry"]["location"]["lat"],
@@ -17,6 +17,8 @@ class CourtsController < ApplicationController
       @courts << court
     end
     @courts
+
+    create_court(@courts)
 
     @locations = []
     @courts.each do |court|
@@ -28,7 +30,10 @@ class CourtsController < ApplicationController
   def show
     @court = Court.find(params[:id])
   end
+  
+  private 
 
-  def create
-  end  
+  def court_params
+    params.require(:court).permit(:name, :latitude, :longitude, :details, :rating)
+  end
 end
