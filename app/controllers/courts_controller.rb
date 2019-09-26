@@ -1,5 +1,7 @@
 class CourtsController < ApplicationController
   include CourtsHelper
+  before_action :authenticate_user!
+  
   def index
     location = "#{current_user.latitude}, #{current_user.longitude}"
     @results = google_api(location)

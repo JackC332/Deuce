@@ -18,3 +18,19 @@
     font-size: xx-large;
     border-radius: 10px;
   }
+
+.fa-chevron-down {
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 85%;
+  right: 50%;
+  cursor: pointer;
+  animation: 1s soft-blink infinite alternate;
+}
+
+@keyframes soft-blink {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
